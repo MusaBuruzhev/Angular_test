@@ -1,0 +1,102 @@
+
+$primary-color: #00ff15;
+$text-color: #333;
+$background-color: #f9f9f9;
+$padding: 16px;
+$border-radius: 4px;
+
+.search {
+    display: flex;
+    margin-bottom: $padding * 2;
+
+    input[type="text"] {
+        flex-grow: 1;
+        padding: $padding / 2;
+        border: 1px solid #747272;
+        border-radius: $border-radius 0 0 $border-radius;
+        font-size: 16px;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+        }
+    }
+
+    button {
+        padding: $padding / 2 $padding;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: 0 $border-radius $border-radius 0;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: $padding;
+
+    .product {
+        background-color: $background-color;
+        border: 1px solid #ddd;
+        border-radius: $border-radius;
+        padding: $padding;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .product-image img {
+            width: 100%;
+            object-fit: cover;
+            height: 200px;
+            border-radius: $border-radius;
+        }
+
+        h3 {
+            color: $text-color;
+            font-size: 18px;
+        }
+
+        .description {
+            color: lighten($text-color, 20%);
+            font-size: 14px;
+            height: 57px;
+        }
+
+        .price {
+            color: $primary-color;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button {
+            background: #ff5100;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+        }
+
+        .added {
+            background: rgb(0, 255, 0);
+            cursor: not-allowed;
+            &:hover {
+                background: rgb(0, 255, 0);
+            }
+        }
+        
+        button:hover {
+            background: #666;
+        }
+    }
+}
